@@ -1,0 +1,41 @@
+{% extends 'rk/base.html' %}
+{% load static %}
+{% block content %}
+<!--contact start here-->
+<div class="contact">
+	<div class="container">
+		<div class="contact-main">
+			<div class="contact-top">
+				<h2>Contact</h2>
+			</div>
+			<div class="contact-bottom">
+				<div class="col-md-9 contact-left">
+					<form action="/contact/" method="post">
+					  {% csrf_token %}
+						<input type="text" name="t1" placeholder="Name">
+						<input type="text" name="t2" class="email" placeholder="Email">
+						<textarea  placeholder="Message" name="t3" required=""></textarea>
+						<input type="submit" value="Send">
+					</form>
+				</div>
+				<div class="col-md-3 contact-right">
+					<h1>HK HOTELS</h1>
+					<p>MOHANA ROAD</p>
+					<p>FARIDABAD, HARYANA(121004)</p>
+					<p>9870987098</p>
+					<p><a href="mailto:info@example.com">rkhotels@gmail.com</a></p>
+				</div>
+			  <div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--contact end here-->
+<!--map start here-->
+<div class="map">
+  <div class="container">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224611.80361236588!2d77.17898605879412!3d28.402371868743366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc15f5a424b1%3A0xe4f50576c850e0f2!2sFaridabad%2C%20Haryana!5e0!3m2!1sen!2sin!4v1608377268928!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+ </div>
+</div>
+<!--map end here-->
+{% endblock %}

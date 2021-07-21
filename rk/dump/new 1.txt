@@ -1,0 +1,30 @@
+
+include'menu.php';
+include'header.php';
+include'side.php';
+
+?>
+<div class='container'>
+<form action='index.php' method='post'>
+<input type='text' name='fname'>
+<input type='text' name='iname'>
+<input type='submit' name='sub'>
+</form>
+</div>
+<?php
+include'fot.php';
+ if(isset($_POST['sub'])){
+echo $name=$_POST['fname'];
+echo $iname=$_POST['iname'];
+$con=mysqli_connect ('localhost','root','','a2it');
+echo $query="insert into admin(name,iname) values('$name','$iname')";
+$sql=mysqli_query($con,$query);
+if ($sql){
+echo "data inserted";
+// header()'location:index.php');
+}
+else{
+echo"error in insertion";
+}
+}
+?>
